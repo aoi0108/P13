@@ -1,0 +1,763 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>P01 Homework</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b69987b3-901f-49e6-a940-10ea164ebe57" class="page sans"><header><h1 class="page-title">P01 Homework</h1><p class="page-description"></p></header><div class="page-body"><h2 id="fd3f3d5e-1df8-4231-9be9-7a63f2ba7d59" class="">P01-1 プログラミング入門</h2><p id="b6cee4fa-0596-4771-88f9-2234c3709135" class="">「P01-1 プログラミング入門」の演習では Google Chrome デベロッパーツールのコンソールを使います。それ以外は使用しません。
+答えはどこかに書き留めておく必要はありません。自分でコンソール上で確認すればOK！</p><h3 id="dfa1ad25-c41b-45cb-8c5a-475c0d208f1c" class="">number（数値型）</h3><ol type="1" id="6bcde6be-b362-4818-858c-b004e4639741" class="numbered-list" start="1"><li>Google Chrome のコンソールに 1 行ずつ、以下の式を入力してみましょう。それぞれ何が起こるか確認してみましょう。
+※<strong>式の終わりはすべてセミコロンで終了していることに注意してください</strong><pre id="a7ae3594-d85c-4ebc-9301-0d13e1adb255" class="code code-wrap"><code>4 + 10;
+1 * 3;
+12 * 4;
+4 % 2;
+5 % 2;
+5 / 1 - 99;
+5000 * -100 * (1 + 2) * (5 * 6);
+1241 / 9 + 99;</code></pre></li></ol><ol type="1" id="1020a984-7e37-470c-94a3-0fb64e4142cf" class="numbered-list" start="2"><li>コンソールを使ってあなたの年齢を分単位で計算してみましょう。</li></ol><ol type="1" id="550eb69c-5f61-45c3-b663-d86a14f37c6c" class="numbered-list" start="3"><li>コンソールが一杯になってきているはずです。<code>console.clear()</code> もしくはWindowsの場合は<code>Ctrl+L</code>、Macでは<code>Cmd+K</code> と入力して Enter を押してみましょう。</li></ol><h3 id="aac161d2-35db-44b1-88f1-071cc95161bb" class="">string（文字列型）</h3><ol type="1" id="2c9463af-61d3-4e98-b363-03c89bca6fdd" class="numbered-list" start="1"><li>コンソール上にて、自分の名前を <code>string（文字列型）</code> で入力してみましょう。</li></ol><ol type="1" id="27629091-2566-4d14-93e5-78ac41c7e421" class="numbered-list" start="2"><li><code>+</code> 演算子を使って、複数の文字列を <em>concatenate</em> （結合）してみましょう。<pre id="0b04aa39-6500-4287-845f-7f88dbd118fe" class="code code-wrap"><code>// このように、苗字と名前を結合することができます
+&quot;Lady &quot; + &quot;Gaga&quot;;</code></pre><p id="d5c5bfa6-687c-4ed7-9fe5-3f8bdd53a6c9" class="">+α : 他にも複数の文字列を結合してみましょう。</p><ul id="f34d7b03-dd46-4375-9b2d-c335312b0857" class="bulleted-list"><li style="list-style-type:disc">自分の苗字と名前</li></ul><ul id="90a89ea6-1745-48d9-8e34-9d07ab534fcf" class="bulleted-list"><li style="list-style-type:disc">Waffle College</li></ul></li></ol><h3 id="ead388f5-b773-4faa-81c8-7c58064c8583" class="">やってみよう！</h3><p id="c4d95bb3-ecfb-4747-805f-250699adc57e" class="">ぜひ、積極的にコードを書いて、いろいろと試してください。初めのうちは、十分理解していないコードを書くのに違和感があるかも。でも、大丈夫！むしろ、手を動かすことで理解が進みます。すぐに慣れますよ👍</p><p id="c86bacb8-a0a9-48ee-a964-d0550b5ea620" class="">
+</p><ol type="1" id="171e0a25-a05c-47b6-9ce9-09d2d2012f90" class="numbered-list" start="1"><li>以下の質問の答えを、実際にコーディングしながら試すことで、導き出してみてください。<ol type="a" id="2f2f4cd5-ae37-45a4-b857-29be99f7e41a" class="numbered-list" start="1"><li><code>文字列型（string）</code>の値 と <code>数値型（number）</code>の値 を足したらどうなりますか？</li></ol><ol type="a" id="0c6ba020-dff4-42b4-bfad-0f7bfbbe645d" class="numbered-list" start="2"><li>その順番を逆にしたらどうなりますか (例 <code>数値型（number）</code> + <code>文字列型（string）</code>)？</li></ol><ol type="a" id="86838d74-946d-4b41-9763-10f4bf53ec84" class="numbered-list" start="3"><li><code>数値型（number）</code> の 5 に <code>文字列型（string）</code> の &quot;5&quot; を掛け算するとどうなりますか？</li></ol></li></ol><ol type="1" id="50263f03-0947-44a6-92e1-ce4ea58c2370" class="numbered-list" start="2"><li>コンソールに 1 行ずつ、以下の式を入力してみましょう。<code>.length</code> を追加するとどうなると思いますか？ ほかの文字列の長さも確認してみましょう。<pre id="836f9579-3535-43dc-8afa-32859af02355" class="code code-wrap"><code>&quot;hello&quot;.length;
+&quot;hello world&quot;.length;
+&quot;123&quot;.length;</code></pre></li></ol><ol type="1" id="ce71172b-c9ae-4dd4-bd55-346444a327cf" class="numbered-list" start="3"><li>以下はどうなりますか？<pre id="000846b2-7908-49a2-ae8e-3fd745ec7990" class="code code-wrap"><code>&quot;hello&quot;.toUpperCase();
+&quot;HELLO&quot;.toLowerCase();
+&quot;hello&quot;.endsWith(&quot;o&quot;);
+&quot;hello&quot;.endsWith(&quot;e&quot;);
+&quot;hello&quot;.endsWith(&quot;llo&quot;);
+&quot;hello&quot;.endsWith();</code></pre><p id="b0ed5fe9-3dd7-46d5-ae00-2ebdb5da18d2" class=""><code>.toUpperCase()</code>、 <code>.toLowerCase()</code>、<code>.endsWith()</code>などは、ネイティブメソッドと呼ばれるもの、もともとJavaScript に組み込まれており、文字列に対してのみ使用できます。</p></li></ol><ol type="1" id="54a2050e-371e-4ef6-94e7-256b0ecdf6e9" class="numbered-list" start="4"><li>上記で使用したメソッドに関する情報は、どこで見つけられるでしょう？調べてみましょう。</li></ol><ol type="1" id="405d3824-25d1-4a12-9ae6-6a48e0913cce" class="numbered-list" start="5"><li><a href="https://eloquentjavascript.net/01_values.html">Eloquent Javascript</a>を読んでみてください！</li></ol><h2 id="7ed59ab5-6884-4069-9486-7bf625f70399" class="">P01-2 変数入門</h2><h3 id="c1d8ed48-0818-4e4e-8019-17a2073d4993" class="">演習問題</h3><p id="c01ba944-3559-4e39-95ac-1114b97f9bda" class=""><a href="https://drive.google.com/file/d/1OxMzX0p9Z5_PNAK27a-n2DfTTUTooii9/view?usp=sharing">ここ</a>から<code>waffle_foundation.zip</code>をダウンロードしてください。
+<code>_lesson-templates</code> フォルダを複製して、<code>variables-intro</code> という名前のフォルダを作り、<code>script.js</code>ファイルをエディタ（VScodeなど）で開きましょう。
+以下の演習は <code>script.js</code> に書いて進めていきます。</p><p id="ff6c2927-e938-49e3-b3cc-a3fce852c37b" class="">
+</p><ol type="1" id="ba2a26fd-9c99-4990-b855-834f5d723ac4" class="numbered-list" start="1"><li><code>name</code>, <code>age</code>, <code>isProgrammer</code>, <code>currentTask</code> という変数を宣言し、テストケース（コメントに書いてある内容）を満たすように値を割り当てましょう。<code>let</code> と <code>const</code> を使ってください。どの変数が再割り当て <strong>すべきではないか</strong> を考える必要があります🤔<pre id="1e9b843c-5b4a-4f91-b783-2c48b23584b6" class="code code-wrap"><code>// 例
+const school = &quot;Waffle College&quot;;
+console.log(school); // &quot;Waffle College&quot; を表示
+let week = 1;
+console.log(week); // &quot;1&quot; を表示
+
+// 以下、問題です
+
+// ここにあなたのコードを書いてください
+console.log(name); // あなたの名前を表示
+
+// ここにあなたのコードを書いてください
+console.log(age); // あなたの年齢を表示
+
+// ここにあなたのコードを書いてください
+console.log(isProgrammer); // &quot;true&quot; を表示
+
+// ここにあなたのコードを書いてください
+console.log(currentTask); // &quot;1&quot; を表示</code></pre></li></ol><ol type="1" id="8d123da8-dbab-4477-9983-06e8bd6dd61c" class="numbered-list" start="2"><li><code>currentTask</code> に 2 を割り当て直してください。<pre id="19d3b0c2-53ee-4ef2-b314-c38676ecd6d8" class="code code-wrap"><code>// ここにあなたのコードを書いてください
+console.log(currentTask); // &quot;2&quot; を表示</code></pre></li></ol><ol type="1" id="f69180f8-4a6d-467c-87c9-c8c2f8e45b40" class="numbered-list" start="3"><li>基本的な数式を計算しましょう。 数式がわからない時は Google で調べましょう。<pre id="90c15ee4-e5dc-46fe-8a0e-7025ba40eef9" class="code code-wrap"><code>// 正方形の面積を計算して保存
+const squareSideLength = 2;
+// ここにあなたのコードを書いてください
+
+console.log(squareArea); // &quot;4&quot; を表示
+
+// 長方形の面積を計算して保存
+const rectangleBaseLength = 3;
+const rectangleHeightLength = 4;
+// ここにあなたのコードを書いてください
+
+console.log(rectangleArea); // &quot;12&quot; を表示
+
+// 三角形の面積を計算して保存
+const triangleBaseLength = 4;
+const triangleHeightLength = 5;
+// ここにあなたのコードを書いてください
+
+console.log(triangleArea); // &quot;10&quot; を表示</code></pre></li></ol><h3 id="451df773-cba4-469d-b033-a3f8c58a8246" class="">変数のタイプ</h3><ol type="1" id="7492badd-9abb-46ae-91ca-ea1ca5d760c5" class="numbered-list" start="1"><li>JavaScript の演算子 <code>typeof</code> を使ってみましょう。この演算子に関する情報は、<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/typeof">ここ</a> から手に入れることができます。<p id="5b06578f-8cdc-4276-a3c1-9c048fd5fe7c" class="">※最初の問題は解答例を載せてあります。</p><pre id="6231a864-e03c-4a96-b3b5-4dff0d8bb38b" class="code code-wrap"><code>// 例
+const variableString = &quot;I am a string&quot;;
+console.log(typeof variableString); // &quot;string&quot;と表示されましたか？
+
+// 問題1
+const variableNumber = ???;         // &quot;number&quot;と表示させるにはどんな値を代入すればいいでしょう？ &quot;？？？&quot;に値を入れてみてください。
+console.log(typeof variableNumber); // &quot;number&quot;と表示されましたか？
+
+// 問題2
+// ここにコードを書いて、&quot;boolean&quot;と表示されるようにしてください。
+console.log(typeof variableBoolean);
+
+// 問題3
+//ここにコードを書いて、&quot;undefined&quot;と表示されるようにしてください。
+console.log(typeof variableUndefined);</code></pre></li></ol><ol type="1" id="127977a5-eb4c-49fe-adaa-5e4f49709506" class="numbered-list" start="2"><li>2 つの <code>number</code> の <em>平均</em> を計算して変数に格納しましょう。&quot;？？？&quot;に値や式を入れてみてください。</li></ol><pre id="03e16cdb-7fbc-4ca7-9243-f88e54f6b04e" class="code code-wrap"><code>const numberA = ???;
+const numberB = ???;
+
+const average = ???;
+console.log(average); // numberA と numberB の平均が表示される。</code></pre><h3 id="a0cda293-47f0-40a1-909e-1656cc26f2e4" class="">中級演習</h3><ol type="1" id="545ae9ba-38fe-4823-82ed-c7bd263410f0" class="numbered-list" start="1"><li>あなたが予想した答えとは <em>少し</em> 異なるかもしれませんが、心配しないでください。結果が予想した値と<strong>近ければ</strong>正解です。<pre id="8662a063-207b-414d-95be-90b9b6874e85" class="code code-wrap"><code>// 円の円周と面積を計算して保存する
+const circleDiameter = 10;
+// ここにあなたのコードを書いてください
+
+console.log(circleCircumference); // &quot;31.41592653589793&quot; に近い値を表示
+console.log(circleArea); // &quot;78.53981633974483&quot; に近い値を表示</code></pre></li></ol><ol type="1" id="6c26d880-22e2-440d-92bd-fdd961d56642" class="numbered-list" start="2"><li>値を直接再割り当てせずに <code>a</code> と <code>b</code> の値を入れ替えて、期待通りの値が出力されるようにしましょう。<p id="d9adddc6-af82-4b5d-bfb3-56fc536cbf40" class=""><strong>ヒント：</strong> データを一時的に保存するために別の変数を作成する必要があります。</p><pre id="5ec05f4d-1f93-488b-b4de-ef5189207311" class="code code-wrap"><code>let a = &quot;B&quot;;
+let b = &quot;A&quot;;
+
+// ここにあなたのコードを書いてください
+
+console.log(a); // &quot;A&quot; を表示
+console.log(b); // &quot;B&quot; を表示</code></pre></li></ol><ol type="1" id="1a318f3e-184e-465d-b396-bd82c61bd8d0" class="numbered-list" start="3"><li>皆さんなら、変数を使ってどんな問題を出しますか？習った内容を駆使して、<strong>変数の練習問題</strong>を作ってみましょう！</li></ol></div></article></body></html>
