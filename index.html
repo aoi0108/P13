@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- 選択肢部分 -->
+    <!-- どこで食べるか -->
+    <p>
+        <label><input type="radio" name="action" id="eatingOut" checked>外食</label>
+        <label><input type="radio" name="action" id="takeOut" checked>テイクアウト</label>
+        <label><input type="radio" name="action" id="cooking" checked>自炊</label>
+    </p>
+
+
+    <!-- 何を食べるか -->
+    <p>
+        <label><input type="radio" name="foodType" id="japaneseFood" checked>和食</label>
+        <label><input type="radio" name="foodType" id="chineseFood" checked>中華</label>
+        <label><input type="radio" name="foodType" id="westernFood" checked>洋食</label>
+        <label><input type="radio" name="foodType" id="ethnicFood" checked>エスニック</label>
+    </p>
+
+    <!-- 結果表示ボタン -->
+    <input id="button" type="button" value="おすすめのご飯を表示" onclick="showFood()">
+
+    <!-- 食べ物の画像 -->
+    <!-- ボタンを押すまでは非表示にしておく -->
+    <div id="result">
+        <p>今日のあなたにおすすめのごはんは...</p>
+        <p id="foodName"></p>
+        <img id="foodImg" src="" alt="">
+    </div>
+
+
+</body>
+
+</html>
