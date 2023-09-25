@@ -1,3 +1,32 @@
+
+
+.title-img{
+    width: 600px;
+    height: 450px;
+    background-image: url(title.jpg);
+    margin: auto;
+}
+
+#button {
+    background-color:#f4a460; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    margin: auto;
+    
+}
+
+
+
+#button:hover {
+    background-color: #cd853f; 
+}
+
+
 #result{
     display:none;
 }
+
