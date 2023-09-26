@@ -20,6 +20,37 @@
 }
 
 
+.noren-img {
+    width: 600px;
+    height: 300px;
+    background-size: 100%;
+    background-position: center;
+    background-image: url(noren.png);
+    margin:auto;
+  }
+
+  body{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    background-color:white;
+    
+}
+html{
+    background-image: url(background.jpg);
+}
+h2{text-align: center;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 300x;
+}
+p{
+    text-align: center;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 40px
+}
+
+
+
 
 #button:hover {
     background-color: #cd853f; 
