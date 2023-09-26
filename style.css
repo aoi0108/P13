@@ -10,12 +10,15 @@
 #button {
     background-color:#f4a460; 
     color: #fff; 
-    padding: 10px 20px; 
+    padding: 20px 40px; 
     border: none; 
-    border-radius: 5px; 
+    border-radius:5px; 
     cursor: pointer; 
     transition: background-color 0.3s ease;
-    margin: auto;
+    display: block; 
+    margin: 0 auto;
+    font-size: 18px;
+    font-family: 'Dela Gothic One', cursive;
     
 }
 
@@ -27,7 +30,26 @@
     background-position: center;
     background-image: url(noren.png);
     margin:auto;
-  }
+
+    animation-name:fadeInAnime;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+        
+@keyframes fadeInAnime{
+    from {
+        opacity: 0;
+    }
+        
+    to {
+        opacity: 1;
+        }
+}
+
+
+        
+  
 
   body{
     width: 100%;
@@ -41,7 +63,7 @@ html{
 }
 h2{text-align: center;
     font-family: 'Dela Gothic One', cursive;
-    font-size: 300x;
+    font-size: 60px;
 }
 p{
     text-align: center;
@@ -59,5 +81,10 @@ p{
 
 #result{
     display:none;
+
+    animation-name:fadeInAnime;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    opacity:0;
 }
 
