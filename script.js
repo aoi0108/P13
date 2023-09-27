@@ -37,18 +37,22 @@ function showFood() {
             //外食・和食
             name.innerHTML = "お寿司";
             img.setAttribute("src", "sushi.jpg");
+            title = "お寿司";
         } else if (checkedFoodType == "chineseFood") {
             //外食・中華
             name.innerHTML = "小籠包";
             img.setAttribute("src", "xiaolongbao.jpg");
+            title ="小籠包";
         } else if (checkedFoodType == "westernFood") {
             //外食・洋食
             name.innerHTML = "ピザ";
             img.setAttribute("src", "pizza.jpg");
+            title ="ピザ";
         } else if (checkedFoodType == "ethnicFood") {
             //外食・エスニック
             name.innerHTML = "カレー";
             img.setAttribute("src", "curry.jpg");
+            title ="カレー";
         }
     } else if (checkedAction == "takeOut") {
         //テイクアウト
@@ -56,18 +60,22 @@ function showFood() {
             //テイクアウト・和食
             name.innerHTML = "牛めし";
             img.setAttribute("src", "gyu-don.jpg");
+            title ="牛めし";
         } else if (checkedFoodType == "chineseFood") {
             //テイクアウト・中華
             name.innerHTML = "餃子";
             img.setAttribute("src", "jiaozi.jpg");
+            title ="餃子";
         } else if (checkedFoodType == "westernFood") {
             //テイクアウト・洋食
             name.innerHTML = "ハンバーガー";
             img.setAttribute("src", "hamburger.jpg");
+            title ="ハンバーガー";
         } else if (checkedFoodType == "ethnicFood") {
             //テイクアウト・エスニック
             name.innerHTML = "トムヤムクン";
             img.setAttribute("src", "tomyamkun.jpg");
+            title ="トムヤムクン";
         }
     } else if (checkedAction == "cooking") {
         //自炊
@@ -75,23 +83,28 @@ function showFood() {
             //自炊・和食
             name.innerHTML = "さばの味噌煮";
             img.setAttribute("src", "sabanomisoni.jpg");
+            title ="さばの味噌煮";
         } else if (checkedFoodType == "chineseFood") {
             //自炊・中華
             name.innerHTML = "棒棒鶏";
             img.setAttribute("src", "bangbangji.jpg");
+            title ="棒棒鶏";
         } else if (checkedFoodType == "westernFood") {
             //自炊・洋食
             name.innerHTML = "ビーフシチュー";
             img.setAttribute("src", "beafStew.jpg");
+            title ="ビーフシチュー";
         } else if (checkedFoodType == "ethnicFood") {
             //自炊・エスニック
             name.innerHTML = "生春巻き";
             img.setAttribute("src", "springRoll.jpg");
+            title ="生春巻き";
         }
     }
 
     //結果を表示する
     result.style.display = "block";
+    return title;
 }
 
 
@@ -135,3 +148,31 @@ function showFood() {
 //     // メッセージをhtmlで表示
 //     messageElement.textContent = `今日は${dailyMessages[date.getDay()] || "曜日情報が取得できませんでした。"} 充実した${hourlyMessage}をお過ごしください`;
 // }
+
+// twitter
+function share_twitter(){
+    const share_twitter = document.getElementById("js-share-twitter");
+    const shareTitle = title;
+    share_twitter.setAttribute(
+        "href",
+        "http://twitter.com/share?url=kyounogohan.com&text=今日のごはんは・・・"+shareTitle+"!!!!!&via=&hashtags=今日のごはん"
+    );
+    }
+    
+    // facebook
+    function share_facebook(){
+    const share_facebook = document.getElementById("js-share-facebook");
+    share_facebook.setAttribute(
+        "href",
+        "http://www.facebook.com/share.php?u=kyounogohan.com&text=食べるご飯を決めた！&via=&hashtags=今日のごはん"
+    );
+    }
+    
+    // line
+    function share_line(){
+    const share_line = document.getElementById("js-share-line");
+    share_line.setAttribute(
+        "href",
+        "https://social-plugins.line.me/lineit/share?url=yurukei-career.com&text=食べるご飯を決めた！&via=&hashtags=今日のごはん"
+    );
+    }
