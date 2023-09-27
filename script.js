@@ -35,58 +35,58 @@ function showFood() {
         //外食
         if (checkedFoodType == "japaneseFood") {
             //外食・和食
-            name.innerHTML = "【外食・和食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "お寿司";
+            img.setAttribute("src", "sushi.jpg");
         } else if (checkedFoodType == "chineseFood") {
             //外食・中華
-            name.innerHTML = "【外食・中華】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "小籠包";
+            img.setAttribute("src", "xiaolongbao.jpg");
         } else if (checkedFoodType == "westernFood") {
             //外食・洋食
-            name.innerHTML = "【外食・洋食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "ピザ";
+            img.setAttribute("src", "pizza.jpg");
         } else if (checkedFoodType == "ethnicFood") {
             //外食・エスニック
-            name.innerHTML = "【外食・エスニック】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "カレー";
+            img.setAttribute("src", "curry.jpg");
         }
     } else if (checkedAction == "takeOut") {
         //テイクアウト
         if (checkedFoodType == "japaneseFood") {
             //テイクアウト・和食
-            name.innerHTML = "【テイクアウト・和食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "牛めし";
+            img.setAttribute("src", "gyu-don.jpg");
         } else if (checkedFoodType == "chineseFood") {
             //テイクアウト・中華
-            name.innerHTML = "【テイクアウト・中華】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "餃子";
+            img.setAttribute("src", "jiaozi.jpg");
         } else if (checkedFoodType == "westernFood") {
             //テイクアウト・洋食
-            name.innerHTML = "【テイクアウト・洋食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "ハンバーガー";
+            img.setAttribute("src", "hamburger.jpg");
         } else if (checkedFoodType == "ethnicFood") {
             //テイクアウト・エスニック
-            name.innerHTML = "【テイクアウト・エスニック】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "トムヤムクン";
+            img.setAttribute("src", "tomyamkun.jpg");
         }
     } else if (checkedAction == "cooking") {
         //自炊
         if (checkedFoodType == "japaneseFood") {
             //自炊・和食
-            name.innerHTML = "【自炊・和食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "さばの味噌煮";
+            img.setAttribute("src", "sabanomisoni.jpg");
         } else if (checkedFoodType == "chineseFood") {
             //自炊・中華
-            name.innerHTML = "【自炊・中華】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "棒棒鶏";
+            img.setAttribute("src", "bangbangji.jpg");
         } else if (checkedFoodType == "westernFood") {
             //自炊・洋食
-            name.innerHTML = "【自炊・洋食】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "ビーフシチュー";
+            img.setAttribute("src", "beafStew.jpg");
         } else if (checkedFoodType == "ethnicFood") {
             //自炊・エスニック
-            name.innerHTML = "【自炊・エスニック】";
-            img.setAttribute("src", "【画像URL】");
+            name.innerHTML = "生春巻き";
+            img.setAttribute("src", "springRoll.jpg");
         }
     }
 

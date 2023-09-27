@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-#button {
+#button  {
     background-color:#f4a460; 
     color: #fff; 
     padding: 20px 40px; 
@@ -20,6 +20,7 @@
     font-size: 18px;
     font-family: 'Dela Gothic One', cursive;
     
+
 }
 
 
@@ -30,7 +31,6 @@
     background-position: center;
     background-image: url(noren.png);
     margin:auto;
-
     animation-name:fadeInAnime;
     animation-duration:2s;
     animation-fill-mode:forwards;
@@ -46,10 +46,6 @@
         opacity: 1;
         }
 }
-
-
-        
-  
 
   body{
     width: 100%;
@@ -86,5 +82,21 @@ p{
     animation-duration:2s;
     animation-fill-mode:forwards;
     opacity:0;
+}
+
+
+
+#foodImg{
+    width: 600px;
+    height: 300px;
+    background-size: 100%;
+    background-position: center;
+    display:flex;
+    align-items:flex-start;
+    margin: auto;
+
+}
+#foodName{
+    text-align: center;
 }
 
