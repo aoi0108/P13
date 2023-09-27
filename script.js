@@ -4,6 +4,7 @@
 /**
  * ボタンがクリックされたら、食べ物の画像を表示する関数
  */
+let title = "これから決めます！";
 function showFood() {
     //結果反映用のエレメントを取得
     let result = document.getElementById("result");
