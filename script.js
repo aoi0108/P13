@@ -1,6 +1,18 @@
 'use strict'
 // Please don't delete the 'use strict' line above
 
+
+/**
+ * ラジオボタンの見た目を変更
+ */
+$(document).ready(function(){
+    $('input.icheck').iCheck({  // inputタグのclass=icheckのものにだけ
+      checkboxClass: 'icheckbox_minimal-orange',  // チェックボックスにminimalのpinkを適用する。
+      radioClass: 'iradio_minimal-orange' // ラジオボタンにminimalのpinkを適用する。
+    });
+  });
+
+
 /**
  * ボタンがクリックされたら、食べ物の画像を表示する関数
  */
