@@ -8,22 +8,25 @@
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
     <link rel="stylesheet" type="text/css" href="./8-8.css">
+    <link rel="stylesheet" href="lightbox.min.css">
+
 
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
-	<script src="jquery.lettering.js"></script>
-	<!--自作のJS-->
-	<script src="8-8.js"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="jquery.lettering.js"></script>
+    <script src="lightbox.min.js"></script>
+    <!--自作のJS-->
+    <script src="8-8.js"></script>
     <!--タイトル画像挿入-->
-    <div class = "title-img"></div>
+    <div class="title-img"></div>
 
     <p class="randomAnime">今日の気分は？</p>
     <!-- 選択肢部分 -->
@@ -53,8 +56,10 @@
         <p>今日のあなたにおすすめのごはんは...</p>
         <div class="noren-img"></div>
         <div class="food">
-        <p id="foodName"></p>
-        <img id="foodImg" src="" alt="">
+            <p id="foodName"></p>
+            <a id="foodLink" href="" data-lightbox="photo03" data-title="">
+                <img id="foodImg" src="" alt="">
+            </a>
         </div>
     </div>
 
@@ -100,39 +105,18 @@
             messageElement.textContent = `今日は${dailyMessages[date.getDay()] || "曜日情報が取得できませんでした。"} 充実した${hourlyMessage}をお過ごしください`;
         </script>
     </div>
-    <div id = "share">
+    <div id="share">
         <p>SNSでシェア</p>
 
-    <!-- twitter -->
-    <a
-        id="js-share-twitter"
-        class="share_button share_twitter"
-        href=""
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        onclick="share_twitter()"
-        >Twitterで共有する</a
-    >
-    <!--facebook -->
-    <a
-        id="js-share-facebook"
-        class="share_button share_facebook"
-        href=""
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        onclick="share_facebook()"
-        >Facebookでシェアする</a
-    >
-    <!-- line -->
-    <a
-        id="js-share-line"
-        class="share_button share_line"
-        href=""
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        onclick="share_line()"
-        >LINEで送る</a
-    >
+        <!-- twitter -->
+        <a id="js-share-twitter" class="share_button share_twitter" href="" target="_blank"
+            rel="nofollow noopener noreferrer" onclick="share_twitter()">Twitterで共有する</a>
+        <!--facebook -->
+        <a id="js-share-facebook" class="share_button share_facebook" href="" target="_blank"
+            rel="nofollow noopener noreferrer" onclick="share_facebook()">Facebookでシェアする</a>
+        <!-- line -->
+        <a id="js-share-line" class="share_button share_line" href="" target="_blank" rel="nofollow noopener noreferrer"
+            onclick="share_line()">LINEで送る</a>
     </div>
 
 </body>
