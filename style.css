@@ -130,7 +130,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 300px;
     padding: 20px;
     box-sizing: border-box;
   }
@@ -138,11 +138,13 @@ p{
   .message-card {
     padding: 20px;
     background-color: #f4a460;
+    color:#fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     margin: 20px 0;
-    max-width: 500px; 
+    max-width: 600px; 
     text-align: center;
+    font-size: 25px;
   }
   
 
