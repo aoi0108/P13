@@ -145,48 +145,6 @@ function showFood() {
     return title;
 }
 
-
-/**
- * 曜日・時間帯ごとにメッセージを表示する
- */
-// function onload() {
-//     // 曜日ごとのメッセージ
-//     const date = new Date();
-//     const daysOfWeek = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-//     const dayOfWeek = daysOfWeek[date.getDay()];
-//     const messageElement = document.getElementById("dailyMessage");
-//     const dailyMessages = [
-//         "月曜日です。今週は外食の予定は多いですか？栄養バランスに気をつけましょう。",
-//         "火曜日です。お気に入りのお店に足を運んでもいいかも。",
-//         "水曜日です。週の中盤です。好きなものを食べて後半戦も乗り切りましょう！",
-//         "木曜日です。週末まであと一息！忙しくても食事は抜かないでくださいね。",
-//         "金曜日です。１週間お疲れ様です！夜はパーっと飲みませんか？",
-//         "土曜日です。外食は混んでるかも？ゆっくり自炊もいいですね。",
-//         "日曜日です。外食は混んでるかも？"
-//     ];
-
-//     // 時間帯ごとのメッセージ
-//     const currentHour = date.getHours();
-//     const hourlyMessages = [
-//         "朝ごはん",
-//         "ランチ",
-//         "おやつタイム",
-//         "ディナー"
-//     ];
-//     let hourlyMessage = "";
-//     if (currentHour >= 4 && currentHour < 10) {
-//         hourlyMessage = hourlyMessages[0];
-//     } else if (currentHour >= 10 && currentHour < 14) {
-//         hourlyMessage = hourlyMessages[1];
-//     } else if (currentHour >= 14 && currentHour < 17) {
-//         hourlyMessage = hourlyMessages[2];
-//     } else {
-//         hourlyMessage = hourlyMessages[3];
-//     }
-//     // メッセージをhtmlで表示
-//     messageElement.textContent = `今日は${dailyMessages[date.getDay()] || "曜日情報が取得できませんでした。"} 充実した${hourlyMessage}をお過ごしください`;
-// }
-
 // twitter
 function share_twitter(){
     const share_twitter = document.getElementById("js-share-twitter");
@@ -214,3 +172,20 @@ function share_twitter(){
         "https://social-plugins.line.me/lineit/share?url=yurukei-career.com&text=食べるご飯を決めた！&via=&hashtags=今日のごはん"
     );
     }
+
+    // タイトル下画像ならべ（Masonry）
+    document.addEventListener('DOMContentLoaded', function () {
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry(elem, {
+          // オプション
+          itemSelector: '.grid-item',
+          percentPosition: true // 要素のパーセンテージ幅を使う
+        });
+      
+        imagesLoaded('.grid', function () {
+          // すべての画像が読み込まれた後にレイアウトを再実行
+          msnry.layout();
+        });
+      });
+      
+  
