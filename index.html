@@ -14,20 +14,15 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <!-- Google font Icon -->
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!--<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">-->
-
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
     <link rel="stylesheet" type="text/css" href="./8-8.css">
     <link rel="stylesheet" href="lightbox.min.css">
     <link rel="stylesheet" href="./skins/minimal/orange.css">
-
-
 </head>
 
 <body>
@@ -38,6 +33,7 @@
     <script src="8-8.js"></script>
     <!--タイトル画像挿入-->
     <div class="title-img"></div>
+    <div class="randomAnime">今日のご飯はこれで決まり！</div>
     <div id="masonry-grid" class="grid">
         <div class="grid-item"><img src="curry.jpg"></div>
         <div class="grid-item"><img src="springRoll.jpg"></div>
@@ -52,7 +48,7 @@
             <p id="dailyMessage"></p>
         </div>
     </div>
-    <p class="randomAnime">今日の気分は？</p>
+    <p>今日の気分は？</p>
 
     <!-- 選択肢部分 -->
     <!-- どこで食べるか -->
@@ -94,42 +90,6 @@
         <div class="daily">
             <p><span id="dailyMessage"></span></p>
         </div>
-        <script>
-            // 曜日ごとのメッセージ
-            const date = new Date();
-            const daysOfWeek = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-            const dayOfWeek = daysOfWeek[date.getDay()];
-            const messageElement = document.getElementById("dailyMessage");
-            const dailyMessages = [
-                "日曜日です。外食は混んでるかも？",
-                "月曜日です。今週は外食の予定は多いですか？栄養バランスに気をつけましょう。",
-                "火曜日です。お気に入りのお店に足を運んでもいいかも。",
-                "水曜日です。週の中盤です。好きなものを食べて後半戦も乗り切りましょう！",
-                "木曜日です。週末まであと一息！忙しくても食事は抜かないでくださいね。",
-                "金曜日です。１週間お疲れ様です！夜はパーっと飲みませんか？",
-                "土曜日です。外食は混んでるかも？ゆっくり自炊もいいですね。"
-            ];
-            // 時間帯ごとのメッセージ
-            const currentHour = date.getHours();
-            const hourlyMessages = [
-                "朝ごはん",
-                "ランチ",
-                "おやつタイム",
-                "ディナー"
-            ];
-            let hourlyMessage = "";
-            if (currentHour >= 4 && currentHour < 10) {
-                hourlyMessage = hourlyMessages[0];
-            } else if (currentHour >= 10 && currentHour < 14) {
-                hourlyMessage = hourlyMessages[1];
-            } else if (currentHour >= 14 && currentHour < 17) {
-                hourlyMessage = hourlyMessages[2];
-            } else {
-                hourlyMessage = hourlyMessages[3];
-            }
-            // メッセージをhtmlで表示
-            messageElement.textContent = `今日は${dailyMessages[date.getDay()] || "曜日情報が取得できませんでした。"} 充実した${hourlyMessage}をお過ごしください`;
-        </script>
     </div>
     <div id="share">
         <p>SNSでシェア</p>
