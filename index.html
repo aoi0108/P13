@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#000000">
     <script type="text/javascript" src="script.js"></script>
     <script src="message.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +27,22 @@
 	<script src="8-8.js"></script>
     <!--タイトル画像挿入-->
     <div class = "title-img"></div>
-    <p><span id="dailyMessage"></span></p>
+    <div id="masonry-grid" class="grid">
+        <div class="grid-item"><img src="curry.jpg"></div>
+        <div class="grid-item"><img src="springRoll.jpg"></div>
+        <div class="grid-item"><img src="beafStew.jpg"></div>
+        <div class="grid-item"><img src="jiaozi.jpg"></div>
+        <div class="grid-item"><img src="pizza.jpg"></div>
+        <div class="grid-item"><img src="sushi.jpg"></div>
+        <div class="grid-item"><img src="sabanomisoni.jpg"></div>
+    </div>
+    <div class="message-card-container">
+        <div id="messageCard" class="message-card" div data-aos="fade-up" data-aos-offset="200" data-aos-once="false" data-aos-duration="1000">
+            <p id="dailyMessage"></p>
+        </div>
+    </div>
     <p class="randomAnime">今日の気分は？</p>
+
     <!-- 選択肢部分 -->
     <!-- どこで食べるか -->
     <p>
@@ -58,6 +73,7 @@
         <p id="foodName"></p>
         <img id="foodImg" src="" alt="">
         </div>
+        <p id="hourlyMessage"></p>
     </div>
     <div id = "share">
         <p>SNSでシェア</p>
@@ -93,7 +109,9 @@
         >LINEで送る</a
     >
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
 </body>
 
 </html>

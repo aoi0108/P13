@@ -122,5 +122,55 @@ p{
 	background-color: #00b900;
 }
 
+/* メッセージカード */
+.message-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .message-card {
+    padding: 20px;
+    background-color: #f4a460;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 20px 0;
+    max-width: 500px; 
+    text-align: center;
+  }
+  
+
+/* タイトル下画像並べ */
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .grid-item {
+    width: 30%;
+    padding: 1.5%;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* レスポンシブのためのメディアクエリ */
+  @media (max-width: 768px) {
+    .grid-item {
+      width: 50%;
+    }
+  }
+  @media (max-width: 480px) {
+    .grid-item {
+      width: 100%;
+    }
+  }
+  
 
 

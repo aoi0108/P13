@@ -1,6 +1,6 @@
-// DOMが読み込まれたら実行される関数
 document.addEventListener('DOMContentLoaded', function() {
     onload();
+    AOS.init();
 });
 
 function onload() {
@@ -38,6 +38,12 @@ function onload() {
     }
 
     // メッセージ要素の取得とテキストの設定
-    const messageElement = document.getElementById("dailyMessage");
-    messageElement.textContent = `今日は${dailyMessages[date.getDay()]} 充実した${hourlyMessage}をお過ごしください。`;
+    const dailyMessageElement = document.getElementById("dailyMessage");
+    dailyMessageElement.textContent = `今日は${dailyMessages[date.getDay()]}`;
+    const hourlyMessageElement = document.getElementById("hourlyMessage");
+    hourlyMessageElement.textContent = `充実した${hourlyMessage}をお過ごしください。`;
+
+    // カードを表示
+    const messageCard = document.getElementById("messageCard");
+    messageCard.style.display = 'block';
 }
