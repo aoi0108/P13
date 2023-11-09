@@ -18,7 +18,7 @@
     display: block; 
     margin: 0 auto;
     font-size: 18px;
-    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Noto Sans JP',cursive;
     
 
 }
@@ -58,12 +58,12 @@ html{
     background-image: url(background.jpg);
 }
 h2{text-align: center;
-    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Noto Sans JP', cursive;
     font-size: 60px;
 }
 p{
     text-align: center;
-    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Noto Sans JP', cursive;
     font-size: 40px
 }
 
