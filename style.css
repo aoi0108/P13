@@ -118,12 +118,14 @@ p{
 
 .share_facebook {
 	background-color: #1877f2;
+    margin: 30px 0px 30px 0px;
 }
 .share_line {
 	background-color: #00b900;
     font-family: "Material Icons";
     content:"e625"
 }
+
 
 /* メッセージカード */
 .message-card-container {
@@ -178,4 +180,6 @@ p{
   }
   
 
-
+#share {
+    height:400px;
+}
