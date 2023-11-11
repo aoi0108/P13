@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script src="message.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,32 +26,54 @@
     <!-- SNSボタン animation -->
     <script src="anime.min.js" defer></script>
     <script src="sns.js" defer></script>
+    <link rel="stylesheet" href="lightbox.min.css">
+    <link rel="stylesheet" href="./skins/minimal/orange.css">
 </head>
 
 <body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
-	<script src="jquery.lettering.js"></script>
-	<!--自作のJS-->
-	<script src="8-8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="jquery.lettering.js"></script>
+    <script src="lightbox.min.js"></script>
+    <script src="icheck.min.js" type="text/javascript"></script>
+    <!--自作のJS-->
+    <script src="8-8.js"></script>
     <!--タイトル画像挿入-->
-    <div class = "title-img"></div>
+    <div class="title-img"></div>
+    <p class="randomAnime">
+        今日のご飯はこれで決まり！
+    </p>
+    <p>気分に合わせておすすめのごはんを提案します！</p>
+    <div id="masonry-grid" class="grid">
+        <div class="grid-item"><img src="curry.jpg"></div>
+        <div class="grid-item"><img src="springRoll.jpg"></div>
+        <div class="grid-item"><img src="beafStew.jpg"></div>
+        <div class="grid-item"><img src="jiaozi.jpg"></div>
+        <div class="grid-item"><img src="pizza.jpg"></div>
+        <div class="grid-item"><img src="sushi.jpg"></div>
+        <div class="grid-item"><img src="sabanomisoni.jpg"></div>
+    </div>
+    <div class="message-card-container">
+        <div id="messageCard" class="message-card" div data-aos="fade-up" data-aos-offset="200" data-aos-once="false" data-aos-duration="800">
+            <p id="dailyMessage"></p>
+        </div>
+    </div>
+    <p>今日の気分は？</p>
 
-    <p class="randomAnime">今日の気分は？</p>
     <!-- 選択肢部分 -->
     <!-- どこで食べるか -->
     <p>
-        <label><input type="radio" name="action" style="transform: scale(1.5);" id="eatingOut" checked>外食</label>
-        <label><input type="radio" name="action" style="transform: scale(1.5);" id="takeOut" checked>テイクアウト</label>
-        <label><input type="radio" name="action" style="transform: scale(1.5);" id="cooking" checked>自炊</label>
+        <label><input type="radio" name="action" style="transform: scale(1.5);" id="eatingOut" class="icheck" checked>外食</label>
+        <label><input type="radio" name="action" style="transform: scale(1.5);" id="takeOut" class="icheck" checked>テイクアウト</label>
+        <label><input type="radio" name="action" style="transform: scale(1.5);" id="cooking" class="icheck" checked>自炊</label>
     </p>
 
 
     <!-- 何を食べるか -->
     <p>
-        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="japaneseFood" checked>和食</label>
-        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="chineseFood" checked>中華</label>
-        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="westernFood" checked>洋食</label>
-        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="ethnicFood" checked>エスニック</label>
+        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="japaneseFood" class="icheck" checked>和食</label>
+        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="chineseFood" class="icheck" checked>中華</label>
+        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="westernFood" class="icheck" checked>洋食</label>
+        <label><input type="radio" name="foodType" style="transform: scale(1.5);" id="ethnicFood" class="icheck" checked>エスニック</label>
     </p>
 
     <!-- 結果表示ボタン -->
@@ -59,9 +86,12 @@
         <p>今日のあなたにおすすめのごはんは...</p>
         <div class="noren-img"></div>
         <div class="food">
-        <p id="foodName"></p>
-        <img id="foodImg" src="" alt="">
+            <p id="foodName"></p>
+            <a id="foodLink" href="" data-lightbox="photo03" data-title="">
+                <img id="foodImg" src="" alt="">
+            </a>
         </div>
+        <p id="hourlyMessage"></p>
     </div>
 
     <!-- 曜日・時間ごとに違うメッセージを表示する -->
@@ -69,45 +99,9 @@
         <div class="daily">
             <p><span id="dailyMessage"></span></p>
         </div>
-        <script>
-            // 曜日ごとのメッセージ
-            const date = new Date();
-            const daysOfWeek = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-            const dayOfWeek = daysOfWeek[date.getDay()];
-            const messageElement = document.getElementById("dailyMessage");
-            const dailyMessages = [
-                "日曜日です。外食は混んでるかも？",
-                "月曜日です。今週は外食の予定は多いですか？栄養バランスに気をつけましょう。",
-                "火曜日です。お気に入りのお店に足を運んでもいいかも。",
-                "水曜日です。週の中盤です。好きなものを食べて後半戦も乗り切りましょう！",
-                "木曜日です。週末まであと一息！忙しくても食事は抜かないでくださいね。",
-                "金曜日です。１週間お疲れ様です！夜はパーっと飲みませんか？",
-                "土曜日です。外食は混んでるかも？ゆっくり自炊もいいですね。"
-            ];
-            // 時間帯ごとのメッセージ
-            const currentHour = date.getHours();
-            const hourlyMessages = [
-                "朝ごはん",
-                "ランチ",
-                "おやつタイム",
-                "ディナー"
-            ];
-            let hourlyMessage = "";
-            if (currentHour >= 4 && currentHour < 10) {
-                hourlyMessage = hourlyMessages[0];
-            } else if (currentHour >= 10 && currentHour < 14) {
-                hourlyMessage = hourlyMessages[1];
-            } else if (currentHour >= 14 && currentHour < 17) {
-                hourlyMessage = hourlyMessages[2];
-            } else {
-                hourlyMessage = hourlyMessages[3];
-            }
-            // メッセージをhtmlで表示
-            messageElement.textContent = `今日は${dailyMessages[date.getDay()] || "曜日情報が取得できませんでした。"} 充実した${hourlyMessage}をお過ごしください`;
-        </script>
     </div>
 
-    <div id = "share">
+    <div id="share">
         <p>SNSでシェア</p>
 
     <!-- twitter -->
@@ -161,7 +155,9 @@
     </div>
     
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
 </body>
 
 </html>
